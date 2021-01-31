@@ -34,6 +34,7 @@ module.exports = {
     "@typescript-eslint/member-delimiter-style": 0,
     "@typescript-eslint/interface-name-prefix": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
     "no-unused-vars": "error",
     "@typescript-eslint/no-unused-vars": "error",
     'indent': 'off',

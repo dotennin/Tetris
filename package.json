@@ -1,18 +1,18 @@
 {
-  "name": "Koiwaclib",
+  "name": "Tetris",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "keywords": [],
   "author": "",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "dev:watch": "npx ts-node-dev --respawn src/index.ts",
     "clean": "rimraf dist/*",
-    "build": "npm-run-all clean tsc",
-    "start": "node .",
+    "start": "npm-run-all -p serve watch",
+    "serve": "serve",
+    "build": "webpack",
+    "watch": "concurrently \"browser-sync start --server -w\" \" webpack --watch\"",
     "eslint": "eslint --fix src/*.*"
   },
   "husky": {
@@ -27,12 +27,14 @@
     ]
   },
   "dependencies": {
-    "typescript": "^3.4.5"
+    "p5": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^12.0.2",
+    "@types/p5": "^0.9.1",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
+    "concurrently": "^5.3.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
@@ -41,7 +43,12 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "rimraf": "^2.6.3",
+    "serve": "^11.3.2",
+    "ts-loader": "^8.0.14",
     "ts-node": "^8.1.0",
-    "ts-node-dev": "^1.0.0-pre.39"
+    "ts-node-dev": "^1.0.0-pre.39",
+    "typescript": "^3.9.7",
+    "webpack": "^5.19.0",
+    "webpack-cli": "^4.4.0"
   }
 }
